@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Nature - Pour un monde plus vert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #14311F;
+            --forest-green: #1F5133;
+            --leaf-green: #3C8A4E;
+            --light-green: #8FCE6A;
+            --cream: #F5F7EE;
+            --white: #FFFFFF;
+            
+            --font-heading: 'Fraunces', serif;
+            --font-body: 'Inter', sans-serif;
+            
+            --spacing-section: 10rem;
+            --container-width: 1300px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--dark-green);
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .logo-text {
+            font-family: var(--font-heading);
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            line-height: 1.1;
+            color: var(--dark-green);
+        }
+        
+        .section-tag {
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: block;
+            color: var(--leaf-green);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        header.scrolled {
+            background-color: var(--cream);
+            padding: 1rem 5%;
+            border-bottom: 1px solid rgba(20, 49, 31, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--white);
+            transition: color 0.4s ease;
+        }
+        header.scrolled .logo-text {
+            color: var(--dark-green);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--white);
+            transition: color 0.3s ease;
+        }
+        header.scrolled nav ul li a {
+            color: var(--dark-green);
+        }
+        nav ul li a:hover {
+            color: var(--light-green) !important;
+        }
+
+        .btn {
+            background-color: var(--light-green);
+            color: var(--dark-green);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+        .btn:hover {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+        }
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--dark-green);
+        }
+        header.scrolled .btn-outline {
+            border-color: var(--dark-green);
+            color: var(--dark-green);
+        }
+        header.scrolled .btn-outline:hover {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(20, 49, 31, 0.4), rgba(20, 49, 31, 0.7)), url('./donnees/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: var(--forest-green);
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 8rem;
+            color: var(--white);
+            position: relative;
+        }
+        .hero .container {
+            width: 100%;
+        }
+        .hero h1 {
+            font-size: 6rem;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            max-width: 1000px;
+            font-weight: 300;
+        }
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Sections common */
+        section {
+            padding: var(--spacing-section) 0;
+        }
+
+        /* Mission */
+        .mission {
+            background-color: var(--cream);
+        }
+        .mission-text {
+            font-size: 2.8rem;
+            line-height: 1.3;
+            font-family: var(--font-heading);
+            color: var(--forest-green);
+            max-width: 1100px;
+            font-weight: 300;
+        }
+
+        /* Services (Nos expertises) */
+        .services {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 10rem 0;
+        }
+        .services h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .services .section-tag {
+            color: var(--light-green);
+        }
+        .services-intro {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin-bottom: 6rem;
+            font-weight: 300;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 6rem 4rem;
+        }
+        .service-card {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 2rem;
+            transition: border-color 0.4s ease, transform 0.4s ease;
+            position: relative;
+        }
+        .service-card:hover {
+            border-top-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+        .service-num {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--light-green);
+            margin-bottom: 2rem;
+            display: block;
+        }
+        .service-card h3 {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        .service-card p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Map Simulation */
+        .map-simulation {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 10rem 0 0 0;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .map-simulation h2 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        .map-intro {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            min-height: 600px;
+            background-color: #0c1f14;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid rgba(143, 206, 106, 0.2);
+            overflow: hidden;
+        }
+        .map-wrapper {
+            position: relative;
+            height: 90%;
+            aspect-ratio: 1/1;
+        }
+        .france-map {
+            width: 100%;
+            height: 100%;
+            fill: rgba(20, 49, 31, 0.6);
+            stroke: rgba(143, 206, 106, 0.4);
+            stroke-width: 1.5;
+            filter: drop-shadow(0 0 10px rgba(143, 206, 106, 0.1));
+        }
+        #dotsLayer {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+        }
+        .tree-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            transform: translate(-50%, -100%); /* L'origine est la base de l'arbre */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 5;
+            pointer-events: auto;
+        }
+        .tree-dot .tree-icon {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 4px rgba(143, 206, 106, 0.6));
+            transition: filter 0.3s ease;
+        }
+        .tree-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--light-green);
+            color: var(--dark-green);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 10px;
+            pointer-events: none;
+            opacity: 0.9;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+        .tree-dot:hover {
+            transform: translate(-50%, -100%) scale(1.5);
+            z-index: 10;
+        }
+        .tree-dot:hover .tree-badge {
+            top: -20px;
+            background: var(--white);
+            opacity: 1;
+            transform: translateX(-50%) scale(0.8);
+        }
+        .tree-dot:hover .tree-icon {
+            filter: drop-shadow(0 0 8px var(--white));
+        }
+        .tree-dot .tree-icon rect, .tree-dot .tree-icon circle {
+            transition: fill 0.3s ease;
+        }
+        .tree-dot:hover .tree-icon rect, .tree-dot:hover .tree-icon circle {
+            fill: var(--white);
+        }
+        .tree-dot .tooltip {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: var(--white);
+            color: var(--dark-green);
+            padding: 1.5rem;
+            border-radius: 4px;
+            width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: left;
+        }
+        .tree-dot:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            z-index: 20;
+        }
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 12px;
+            height: 12px;
+            background: var(--white);
+        }
+        .tooltip h4 {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            font-family: var(--font-heading);
+            border-bottom: 1px solid rgba(20, 49, 31, 0.1);
+            padding-bottom: 0.5rem;
+        }
+        .tooltip p {
+            margin: 0.4rem 0;
+            font-size: 0.85rem;
+            color: #4a5c50;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+        }
+        .tooltip p span {
+            color: var(--dark-green);
+            font-weight: 600;
+        }
+        .status-badge {
+            display: inline-block;
+            background: rgba(143, 206, 106, 0.2);
+            color: var(--leaf-green) !important;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        /* Onde pulsante sous l'arbre */
+        .tree-dot::after {
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            width: 14px;
+            height: 6px;
+            border-radius: 50%;
+            border: 1px solid var(--light-green);
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: pulse-ring 2.5s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: translateX(-50%) scale(0.5); opacity: 1; }
+            100% { transform: translateX(-50%) scale(2.5); opacity: 0; }
+        }
+
+        /* Cibles (Vous êtes) */
+        .cibles {
+            background-color: var(--white);
+        }
+        .cible-block {
+            display: flex;
+            align-items: stretch;
+            border-top: 1px solid rgba(20, 49, 31, 0.1);
+            padding: 6rem 0;
+            gap: 5rem;
+        }
+        .cible-block:last-child {
+            border-bottom: 1px solid rgba(20, 49, 31, 0.1);
+        }
+        .cible-img-wrapper {
+            flex: 0 0 45%;
+            position: relative;
+        }
+        .cible-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            background-color: var(--leaf-green);
+        }
+        .cible-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .cible-content h3 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-green);
+            font-weight: 300;
+        }
+        .cible-subtitle {
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: var(--leaf-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .cible-content ul {
+            list-style: none;
+        }
+        .cible-content ul li {
+            margin-bottom: 1.2rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.15rem;
+            color: #4a5c50;
+            font-weight: 300;
+        }
+        .cible-content ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--leaf-green);
+            font-weight: bold;
+        }
+
+        /* Realisations */
+        .realisations {
+            background-color: var(--cream);
+            color: var(--dark-green);
+        }
+        .realisations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+        .real-card {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .real-img-wrapper {
+            overflow: hidden;
+            background-color: var(--forest-green);
+            aspect-ratio: 16/10;
+        }
+        .real-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .real-card:hover .real-img {
+            transform: scale(1.05);
+        }
+        .real-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: var(--dark-green);
+        }
+        .real-content p {
+            color: #4a5c50;
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+
+        /* Pourquoi nous (Valeurs) */
+        .valeurs {
+            background-color: var(--white);
+            padding: 10rem 0;
+            border-top: 1px solid rgba(20, 49, 31, 0.1);
+        }
+        .valeurs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid rgba(20, 49, 31, 0.1);
+            margin-top: 6rem;
+        }
+        .valeur-item {
+            padding: 5rem 4rem;
+            border-bottom: 1px solid rgba(20, 49, 31, 0.1);
+            border-right: 1px solid rgba(20, 49, 31, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 350px;
+            transition: background-color 0.4s ease;
+        }
+        .valeur-item:nth-child(even) {
+            border-right: none;
+        }
+        .valeur-item:hover {
+            background-color: var(--cream);
+        }
+        .valeur-num {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--light-green);
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        .valeur-content h3 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-green);
+            font-weight: 300;
+        }
+        .valeur-content p {
+            font-size: 1.2rem;
+            color: #4a5c50;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Localisation */
+        .localisation {
+            background-color: var(--forest-green);
+            color: var(--white);
+            padding: 8rem 0;
+        }
+        .localisation .section-tag {
+            color: var(--light-green);
+        }
+        .localisation h2 {
+            color: var(--white);
+        }
+        .localisation-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        .loc-text {
+            flex: 1;
+            max-width: 800px;
+        }
+        .loc-text h2 {
+            margin-bottom: 2rem;
+        }
+        .loc-text p {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        /* Contact */
+        .contact {
+            background-color: var(--white);
+            color: var(--dark-green);
+        }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+        }
+        .contact-info p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #4a5c50;
+            font-weight: 300;
+        }
+        .contact-form {
+            background-color: var(--cream);
+            padding: 4rem;
+            border-radius: 4px;
+        }
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--dark-green);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 1px solid rgba(20, 49, 31, 0.2);
+            background-color: var(--white);
+            font-family: var(--font-body);
+            transition: border-color 0.3s;
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--leaf-green);
+        }
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .contact-form .btn {
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            padding: 1.2rem;
+        }
+        #form-message {
+            display: none;
+            margin-top: 2rem;
+            color: var(--forest-green);
+            font-weight: 500;
+            background: var(--light-green);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: rgba(255,255,255,0.6);
+            padding: 6rem 0 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 5rem;
+            margin-bottom: 5rem;
+        }
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        .footer-grid h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .footer-grid p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+        .footer-grid ul {
+            list-style: none;
+        }
+        .footer-grid ul li {
+            margin-bottom: 1rem;
+        }
+        .footer-grid ul li a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 300;
+        }
+        .footer-grid ul li a:hover {
+            color: var(--light-green);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 5rem; }
+            .cible-block { flex-direction: column; gap: 3rem; }
+            .realisations-grid { grid-template-columns: 1fr; }
+            .contact-wrapper { grid-template-columns: 1fr; gap: 4rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+        }
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero h1 { font-size: 3.5rem; }
+            .mission-text { font-size: 2rem; }
+            .valeurs-grid { grid-template-columns: 1fr; }
+            .valeur-item { border-right: none; padding: 4rem 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            section { padding: 6rem 0; }
+            .map-container { min-height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <a href="#" class="logo">
+            <img src="donnees/logo.png" alt="" onerror="this.style.display='none'">
+            <span class="logo-text">4Nature</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#mission">Notre mission</a></li>
+                <li><a href="#services">Nos expertises</a></li>
+                <li><a href="#suivi">Technologie</a></li>
+                <li><a href="#cibles">Vous êtes</a></li>
+                <li><a href="#realisations">Réalisations</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn btn-outline">Nous contacter</a>
+    </header>
+
+    <section class="hero" id="accueil">
+        <div class="container">
+            <h1>Des villes qui respirent.</h1>
+            <p>Reboisement urbain garanti — pour un monde plus vert et des territoires résilients.</p>
+            <a href="#cibles" class="btn">Verdir ma ville</a>
+        </div>
+    </section>
+
+    <section class="mission" id="mission">
+        <div class="container">
+            <span class="section-tag">Notre mission</span>
+            <div class="mission-text">
+                Face au réchauffement, les villes doivent planter des arbres pour se rafraîchir. Mais planter ne suffit pas : sans suivi, une grande partie des arbres meurt. Notre mission : garantir que chaque arbre planté survive, grandisse et rafraîchisse durablement la ville.
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <span class="section-tag">Nos expertises</span>
+            <h2>L'accompagnement 4Nature</h2>
+            <p class="services-intro">Une approche globale et sur mesure, allant de l'étude préalable à la garantie de reprise, pour assurer la pérennité de vos plantations urbaines.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-num">01.</span>
+                    <h3>Étude & plan</h3>
+                    <p>Analyse minutieuse du sol, du climat et des contraintes de chaque site pour concevoir un plan de plantation sur mesure et résilient.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-num">02.</span>
+                    <h3>Plantation</h3>
+                    <p>Mise en terre selon un protocole strict qui maximise la reprise, en sélectionnant les essences adaptées et en apportant les premiers soins.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-num">03.</span>
+                    <h3>Suivi & cartographie</h3>
+                    <p>Géolocalisation, entretien régulier et surveillance sanitaire de chaque arbre pendant ses premières années, jusqu'à l'autonomie complète.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-num">04.</span>
+                    <h3>Sensibilisation</h3>
+                    <p>Ateliers de formation pour les habitants, les agents territoriaux et les écoles afin de reconnecter la ville à son patrimoine végétal.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-num">05.</span>
+                    <h3>Garantie de reprise</h3>
+                    <p>Un engagement ferme : nous garantissons la survie de vos plantations et en apportons la preuve via un rapport de suivi transparent et mesuré.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-simulation" id="suivi">
+        <div class="container">
+            <span class="section-tag">Technologie</span>
+            <h2>Suivi géolocalisé en direct</h2>
+            <p class="map-intro">Notre plateforme propriétaire nous permet de cartographier, de surveiller la santé et la croissance de chaque arbre planté partout en France. La preuve technologique de notre garantie, en temps réel.</p>
+        </div>
+        <div class="map-container" id="treeMap">
+            <div class="map-wrapper">
+                <!-- SVG map of France based on real GeoJSON projection -->
+                <svg viewBox="0 0 800 800" class="france-map" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 800.00 736.74 L 781.33 800.00 L 755.67 783.33 L 742.58 728.22 L 753.99 697.78 L 790.39 666.51 L 800.00 736.74 Z M 462.43 63.02 L 501.87 101.63 L 530.88 95.26 L 580.34 132.59 L 592.98 139.70 L 609.29 137.97 L 635.97 159.41 L 717.43 174.50 L 688.85 230.58 L 681.67 288.92 L 666.15 302.91 L 640.40 295.37 L 642.21 316.18 L 600.87 362.20 L 600.04 399.28 L 627.03 386.45 L 646.45 422.37 L 644.12 445.51 L 660.75 476.26 L 641.15 501.20 L 655.72 564.57 L 686.36 574.96 L 679.89 610.51 L 628.68 656.77 L 517.19 634.60 L 434.85 661.17 L 428.39 710.49 L 362.86 721.10 L 299.25 684.06 L 278.70 701.76 L 174.65 664.54 L 152.12 632.70 L 181.35 583.58 L 192.11 420.42 L 133.78 334.47 L 92.09 293.04 L 5.70 261.54 L 0.00 201.82 L 73.29 184.00 L 168.22 205.07 L 150.30 112.37 L 203.66 147.51 L 335.27 83.64 L 352.24 16.53 L 401.68 0.00 L 409.87 28.80 L 436.14 30.15 L 462.43 63.02 Z"></path>
+                </svg>
+                <!-- Layer where JS will inject points exactly over the SVG -->
+                <div id="dotsLayer"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cibles" id="cibles">
+        <div class="container">
+            <span class="section-tag">Solutions sur mesure</span>
+            <h2>Vous êtes</h2>
+            
+            <div class="cible-block">
+                <div class="cible-img-wrapper">
+                    <img src="donnees/cible-ville.jpg" alt="Végétalisation de ville" class="cible-img" onerror="this.style.display='none'">
+                </div>
+                <div class="cible-content">
+                    <h3>Une collectivité</h3>
+                    <p class="cible-subtitle">Vous souhaitez :</p>
+                    <ul>
+                        <li>Végétaliser l'espace public de votre ville</li>
+                        <li>Lutter efficacement contre les îlots de chaleur</li>
+                        <li>Garantir la survie de vos plantations face au climat</li>
+                        <li>Justifier votre dépense publique avec des résultats mesurés</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cible-block">
+                <div class="cible-img-wrapper">
+                    <img src="donnees/cible-entreprise.jpg" alt="Végétalisation d'entreprise" class="cible-img" onerror="this.style.display='none'">
+                </div>
+                <div class="cible-content">
+                    <h3>Une entreprise</h3>
+                    <p class="cible-subtitle">Vous souhaitez :</p>
+                    <ul>
+                        <li>Rafraîchir votre site industriel ou votre parking</li>
+                        <li>Répondre à vos obligations légales de végétalisation</li>
+                        <li>Valoriser concrètement votre démarche RSE</li>
+                        <li>Améliorer le cadre de vie et le confort de vos salariés</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cible-block">
+                <div class="cible-img-wrapper">
+                    <img src="donnees/cible-ecole.jpg" alt="Végétalisation d'école" class="cible-img" onerror="this.style.display='none'">
+                </div>
+                <div class="cible-content">
+                    <h3>Un établissement scolaire</h3>
+                    <p class="cible-subtitle">Vous souhaitez :</p>
+                    <ul>
+                        <li>Créer un véritable îlot de fraîcheur dans la cour</li>
+                        <li>Sensibiliser les élèves au vivant et au cycle de l'arbre</li>
+                        <li>Désimperméabiliser et verdir vos espaces de récréation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="realisations" id="realisations">
+        <div class="container">
+            <span class="section-tag">Projets</span>
+            <h2>Nos réalisations</h2>
+            <div class="realisations-grid">
+                <div class="real-card">
+                    <div class="real-img-wrapper">
+                        <img src="donnees/realisation1.jpg" alt="Réalisation 1" class="real-img" onerror="this.style.display='none'">
+                    </div>
+                    <div class="real-content">
+                        <h3>Place réaménagée à Toulouse</h3>
+                        <p>250 arbres plantés, 7 800 m² d'espaces verts, un îlot de fraîcheur créé en plein centre-ville.</p>
+                    </div>
+                </div>
+                <div class="real-card">
+                    <div class="real-img-wrapper">
+                        <img src="donnees/realisation2.jpg" alt="Réalisation 2" class="real-img" onerror="this.style.display='none'">
+                    </div>
+                    <div class="real-content">
+                        <h3>Site industriel revégétalisé</h3>
+                        <p>Plantation de haies bocagères et d'arbres d'ombrage sur parking. 100% de taux de survie après 2 ans.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="valeurs" id="valeurs">
+        <div class="container">
+            <span class="section-tag">Notre vision</span>
+            <h2>Les valeurs qui nous animent</h2>
+            <div class="valeurs-grid">
+                <div class="valeur-item">
+                    <div class="valeur-num">01.</div>
+                    <div class="valeur-content">
+                        <h3>Expertise</h3>
+                        <p>Des savoirs techniques pointus, forgés sur le terrain, pour apporter des solutions arboricoles pérennes et adaptées au réchauffement.</p>
+                    </div>
+                </div>
+                <div class="valeur-item">
+                    <div class="valeur-num">02.</div>
+                    <div class="valeur-content">
+                        <h3>Engagement</h3>
+                        <p>Nous ne faisons pas que planter, nous faisons grandir. Une garantie de résultat qui nous lie au succès de vos espaces verts.</p>
+                    </div>
+                </div>
+                <div class="valeur-item">
+                    <div class="valeur-num">03.</div>
+                    <div class="valeur-content">
+                        <h3>Transparence</h3>
+                        <p>Des preuves mesurées et un suivi sanitaire rigoureux. L'évolution de votre patrimoine arboré est cartographiée et accessible à tout moment.</p>
+                    </div>
+                </div>
+                <div class="valeur-item">
+                    <div class="valeur-num">04.</div>
+                    <div class="valeur-content">
+                        <h3>Proximité</h3>
+                        <p>Un ancrage territorial fort pour comprendre les spécificités de votre sol, de votre climat local, et tisser des liens avec la communauté.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="localisation">
+        <div class="container">
+            <div class="localisation-content">
+                <div class="loc-text">
+                    <span class="section-tag">Nos bureaux</span>
+                    <h2>Au cœur des territoires</h2>
+                    <p>Implantés à Toulouse, au cœur de l'Occitanie, nous agissons dans une région en première ligne face à l'urgence climatique et aux pics de chaleur.</p>
+                    <a href="#contact" class="btn btn-outline">Nous rencontrer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <span class="section-tag">Échanger</span>
+                    <h2>Prendre contact</h2>
+                    <p>Prêt à repenser la place de la nature dans vos espaces ?</p>
+                    <p>Notre équipe d'experts est à votre disposition pour étudier votre projet, analyser vos contraintes et vous proposer un plan d'action garanti.</p>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nom">Nom, Collectivité ou Entreprise</label>
+                            <input type="text" id="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Votre projet</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer la demande</button>
+                    </form>
+                    <div id="form-message">Votre message a été envoyé avec succès. Notre équipe vous recontactera très prochainement.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span class="footer-logo">4Nature</span>
+                    <p>Reboisement urbain garanti.<br>Pour un monde plus vert et résilient.</p>
+                </div>
+                <div>
+                    <h4>Nos bureaux</h4>
+                    <ul>
+                        <li>Toulouse, Occitanie</li>
+                        <li>Tél. : 05 00 00 00 00</li>
+                        <li>Email: contact@4nature.fr</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#mission">Notre mission</a></li>
+                        <li><a href="#services">Nos expertises</a></li>
+                        <li><a href="#cibles">Vous êtes</a></li>
+                        <li><a href="#realisations">Nos projets</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 4Nature. Tous droits réservés.</span>
+                <span>Mentions légales & Politique de confidentialité</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.style.display = 'none';
+            formMessage.style.display = 'block';
+        });
+
+        // Map Simulation Logic (Real France Coordinates)
+        const dotsLayer = document.getElementById('dotsLayer');
+        const treeSpecies = ['Chêne vert', 'Tilleul', 'Micocoulier', 'Érable champêtre', 'Platane'];
+        const treeStatus = ['Excellente', 'Bonne', 'En croissance'];
+        const statusColors = ['var(--leaf-green)', 'var(--light-green)', '#F5F7EE'];
+
+        // Vraies coordonnées projetées des principales villes sur notre SVG
+        const frenchCities = [
+            {name: "Paris", x: 49.07, y: 23.46},
+            {name: "Marseille", x: 70.39, y: 80.38},
+            {name: "Lyon", x: 66.62, y: 55.12},
+            {name: "Toulouse", x: 42.65, y: 77.23},
+            {name: "Nice", x: 83.76, y: 76.15},
+            {name: "Nantes", x: 21.47, y: 40.23},
+            {name: "Montpellier", x: 59.84, y: 77.16},
+            {name: "Strasbourg", x: 87.23, y: 26.36},
+            {name: "Bordeaux", x: 28.36, y: 64.60},
+            {name: "Lille", x: 54.05, y: 5.32},
+            {name: "Rennes", x: 20.59, y: 31.03},
+            {name: "Reims", x: 60.94, y: 19.35},
+            {name: "Grenoble", x: 72.90, y: 61.01},
+            {name: "Dijon", x: 68.07, y: 39.17},
+            {name: "Clermont-Ferrand", x: 54.26, y: 54.99}
+        ];
+
+        // Pour avoir plus de points, on va créer de petits "clusters" autour des villes
+        frenchCities.forEach(city => {
+            // Créer 2 à 4 points par ville
+            const pointsCount = Math.floor(Math.random() * 3) + 2;
+            
+            for(let i = 0; i < pointsCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'tree-dot';
+                
+                // Petit décalage aléatoire pour ne pas qu'ils se superposent exactement
+                const offsetX = (Math.random() - 0.5) * 4; 
+                const offsetY = (Math.random() - 0.5) * 4;
+                
+                dot.style.left = `${city.x + offsetX}%`;
+                dot.style.top = `${city.y + offsetY}%`;
+                
+                // Délai d'animation
+                dot.style.animationDelay = `${Math.random() * 3}s`;
+                
+                // Données
+                const speciesIdx = Math.floor(Math.random() * treeSpecies.length);
+                const statusIdx = Math.floor(Math.random() * treeStatus.length);
+                const year = 2024 + Math.floor(Math.random() * 3);
+                const id = Math.floor(Math.random() * 9000) + 1000;
+                const treeCount = Math.floor(Math.random() * 400) + 50; // Random number of trees for this project
+                
+                dot.innerHTML = `
+                    <div class="tree-badge">${treeCount}</div>
+                    <svg class="tree-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="11" y="14" width="2" height="8" fill="var(--light-green)" />
+                        <circle cx="12" cy="7" r="6" fill="var(--light-green)" />
+                        <circle cx="7" cy="11" r="5" fill="var(--light-green)" />
+                        <circle cx="17" cy="11" r="5" fill="var(--light-green)" />
+                    </svg>
+                    <div class="tooltip">
+                        <h4>Projet #4N-${id} (${city.name})</h4>
+                        <p>Essence : <span>${treeSpecies[speciesIdx]}</span></p>
+                        <p>Plantation : <span>Automne ${year}</span></p>
+                        <p>Santé : <span class="status-badge" style="color: ${statusColors[statusIdx]} !important; border: 1px solid ${statusColors[statusIdx]};">${treeStatus[statusIdx]}</span></p>
+                    </div>
+                `;
+                
+                dotsLayer.appendChild(dot);
+            }
+        });
+    </script>
+</body>
+</html>
