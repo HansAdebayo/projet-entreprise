@@ -158,6 +158,22 @@
             background-color: var(--white);
             color: var(--dark-green);
         }
+        .btn-dark-outline {
+            background-color: transparent;
+            border: 1px solid var(--dark-green);
+            color: var(--dark-green);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-family: var(--font-body);
+        }
+        .btn-dark-outline:hover {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
         header.scrolled .btn-outline {
             border-color: var(--dark-green);
             color: var(--dark-green);
@@ -515,6 +531,25 @@
             color: var(--leaf-green);
             font-weight: bold;
         }
+        .cible-autre {
+            background-color: var(--cream);
+            padding: 3rem 4rem;
+            margin-top: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--light-green);
+        }
+        .cible-autre-content h3 {
+            font-size: 2rem;
+            color: var(--dark-green);
+            margin-bottom: 0.5rem;
+        }
+        .cible-autre-content p {
+            font-size: 1.1rem;
+            color: #4a5c50;
+            max-width: 600px;
+        }
 
         /* Realisations */
         .realisations {
@@ -774,6 +809,7 @@
             .footer-grid { grid-template-columns: 1fr; }
             section { padding: 6rem 0; }
             .map-container { min-height: 400px; }
+            .cible-autre { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 2rem; }
         }
     </style>
 </head>
@@ -885,6 +921,7 @@
                         <li>Garantir la survie de vos plantations face au climat</li>
                         <li>Justifier votre dépense publique avec des résultats mesurés</li>
                     </ul>
+                    <a href="#contact" class="btn-dark-outline" style="margin-top: 2rem; align-self: flex-start;">Verdir ma ville</a>
                 </div>
             </div>
 
@@ -901,6 +938,7 @@
                         <li>Valoriser concrètement votre démarche RSE</li>
                         <li>Améliorer le cadre de vie et le confort de vos salariés</li>
                     </ul>
+                    <a href="#contact" class="btn-dark-outline" style="margin-top: 2rem; align-self: flex-start;">Rafraîchir mon site</a>
                 </div>
             </div>
 
@@ -916,32 +954,42 @@
                         <li>Sensibiliser les élèves au vivant et au cycle de l'arbre</li>
                         <li>Désimperméabiliser et verdir vos espaces de récréation</li>
                     </ul>
+                    <a href="#contact" class="btn-dark-outline" style="margin-top: 2rem; align-self: flex-start;">Transformer notre cour</a>
                 </div>
+            </div>
+
+            <!-- Autres profils -->
+            <div class="cible-autre">
+                <div class="cible-autre-content">
+                    <h3>Un particulier, une association ou un autre profil ?</h3>
+                    <p>Vous avez un terrain à reboiser, un projet participatif, ou une volonté d'agir pour la nature ? Nous accompagnons toutes les initiatives de végétalisation.</p>
+                </div>
+                <a href="#contact" class="btn">Discutons de votre projet</a>
             </div>
         </div>
     </section>
 
     <section class="realisations" id="realisations">
         <div class="container">
-            <span class="section-tag">Projets</span>
-            <h2>Nos réalisations</h2>
+            <span class="section-tag">Champs d'action</span>
+            <h2>Ce que nous pouvons créer ensemble</h2>
             <div class="realisations-grid">
                 <div class="real-card">
                     <div class="real-img-wrapper">
-                        <img src="donnees/realisation1.jpg" alt="Réalisation 1" class="real-img" onerror="this.style.display='none'">
+                        <img src="donnees/realisation1.jpg" alt="Réaménagement public" class="real-img" onerror="this.style.display='none'">
                     </div>
                     <div class="real-content">
-                        <h3>Place réaménagée à Toulouse</h3>
-                        <p>250 arbres plantés, 7 800 m² d'espaces verts, un îlot de fraîcheur créé en plein centre-ville.</p>
+                        <h3>Réaménagement de places publiques</h3>
+                        <p>Nous transformons vos esplanades très minérales en véritables îlots de fraîcheur. En dé-bitumant et en plantant des essences adaptées au stress urbain, nous faisons drastiquement baisser la température au sol.</p>
                     </div>
                 </div>
                 <div class="real-card">
                     <div class="real-img-wrapper">
-                        <img src="donnees/realisation2.jpg" alt="Réalisation 2" class="real-img" onerror="this.style.display='none'">
+                        <img src="donnees/realisation2.jpg" alt="Revégétalisation entreprise" class="real-img" onerror="this.style.display='none'">
                     </div>
                     <div class="real-content">
-                        <h3>Site industriel revégétalisé</h3>
-                        <p>Plantation de haies bocagères et d'arbres d'ombrage sur parking. 100% de taux de survie après 2 ans.</p>
+                        <h3>Revégétalisation de sites et parkings</h3>
+                        <p>Plantation de canopées pour ombrager vos parkings et de haies bocagères. Une solution clé en main pour répondre aux nouvelles lois environnementales et valoriser durablement votre foncier.</p>
                     </div>
                 </div>
             </div>
