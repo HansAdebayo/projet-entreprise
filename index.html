@@ -695,6 +695,85 @@
             line-height: 1.6;
         }
 
+        /* Témoignages */
+        .temoignages {
+            background-color: var(--dark-green);
+            color: var(--white);
+            padding: 8rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .temoignages .section-tag {
+            color: var(--light-green);
+        }
+        .temoignages h2 {
+            color: var(--white);
+        }
+        .temoignages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        .temoignage-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .temoignage-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        .temoignage-content p {
+            font-size: 1.15rem;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .temoignage-content p::before {
+            content: '"';
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--light-green);
+            display: block;
+            line-height: 0;
+            margin-bottom: 1.5rem;
+            opacity: 0.5;
+        }
+        .temoignage-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-green);
+            color: var(--dark-green);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+        }
+        .author-info strong {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+        .author-info span {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
         /* Localisation */
         .localisation {
             background-color: var(--forest-green);
@@ -852,6 +931,7 @@
             .cible-block { flex-direction: column; gap: 3rem; }
             .realisations-grid { grid-template-columns: 1fr; }
             .infra-grid { grid-template-columns: 1fr; }
+            .temoignages-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-wrapper { grid-template-columns: 1fr; gap: 4rem; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
         }
@@ -865,6 +945,7 @@
             section { padding: 6rem 0; }
             .map-container { min-height: 400px; }
             .cible-autre { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 2rem; }
+            .temoignages-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -1072,6 +1153,51 @@
                     <div class="real-content">
                         <h3>Revégétalisation de sites et parkings</h3>
                         <p>Plantation de canopées pour ombrager vos parkings et de haies bocagères. Une solution clé en main pour répondre aux nouvelles lois environnementales et valoriser durablement votre foncier.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="temoignages" id="temoignages">
+        <div class="container">
+            <span class="section-tag">Communauté</span>
+            <h2>Ils nous soutiennent</h2>
+            <div class="temoignages-grid">
+                <div class="temoignage-card">
+                    <div class="temoignage-content">
+                        <p>"Enfin une démarche qui ne se contente pas de planter, mais qui s'assure que les arbres survivent. C'est exactement ce dont nos villes ont besoin face aux canicules."</p>
+                    </div>
+                    <div class="temoignage-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <strong>Laurent D.</strong>
+                            <span>Urbaniste engagé</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="temoignage-card">
+                    <div class="temoignage-content">
+                        <p>"J'ai tout de suite adhéré au concept. Utiliser la technologie pour cartographier et suivre la santé des jeunes pousses, c'est clairement l'avenir du reboisement."</p>
+                    </div>
+                    <div class="temoignage-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <strong>Sophie M.</strong>
+                            <span>Membre de la communauté</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="temoignage-card">
+                    <div class="temoignage-content">
+                        <p>"Une équipe de passionnés qui met la science et les biostimulants au service de la nature. J'ai hâte de voir les premiers projets se concrétiser dans ma région !"</p>
+                    </div>
+                    <div class="temoignage-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <strong>Antoine R.</strong>
+                            <span>Soutien de la première heure</span>
+                        </div>
                     </div>
                 </div>
             </div>
