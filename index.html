@@ -469,6 +469,59 @@
             100% { transform: translateX(-50%) scale(2.5); opacity: 0; }
         }
 
+        /* Infrastructures (Labo & Locaux) */
+        .infrastructures {
+            background-color: var(--cream);
+            color: var(--dark-green);
+        }
+        .infra-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+        .infra-card {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .infra-img-wrapper {
+            position: relative;
+            background-color: var(--forest-green);
+            aspect-ratio: 4/3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .infra-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+            z-index: 2;
+        }
+        .placeholder-text {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.2rem;
+            font-family: var(--font-heading);
+            z-index: 1;
+            text-align: center;
+            padding: 2rem;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+        }
+        .infra-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: var(--dark-green);
+        }
+        .infra-content p {
+            color: #4a5c50;
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+
         /* Cibles (Vous êtes) */
         .cibles {
             background-color: var(--white);
@@ -798,6 +851,7 @@
             .hero h1 { font-size: 5rem; }
             .cible-block { flex-direction: column; gap: 3rem; }
             .realisations-grid { grid-template-columns: 1fr; }
+            .infra-grid { grid-template-columns: 1fr; }
             .contact-wrapper { grid-template-columns: 1fr; gap: 4rem; }
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
         }
@@ -900,6 +954,37 @@
                 </svg>
                 <!-- Layer where JS will inject points exactly over the SVG -->
                 <div id="dotsLayer"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="infrastructures" id="infrastructures">
+        <div class="container">
+            <span class="section-tag">Ressources</span>
+            <h2>Notre écosystème</h2>
+            <div class="infra-grid">
+                <div class="infra-card">
+                    <div class="infra-img-wrapper">
+                        <!-- Placeholder photo pour le labo -->
+                        <img src="donnees/labo-placeholder.jpg" alt="Laboratoire biostimulants" class="infra-img" onerror="this.style.display='none';">
+                        <div class="placeholder-text">Photo Labo (à venir)</div>
+                    </div>
+                    <div class="infra-content">
+                        <h3>Notre Laboratoire Partenaire</h3>
+                        <p>Nous travaillons en étroite collaboration avec un laboratoire spécialisé. Ils développent pour nous des <strong>biostimulants sur mesure</strong>, adaptés aux carences spécifiques des sols urbains, garantissant ainsi un enracinement et une résilience exceptionnels pour chaque arbre planté.</p>
+                    </div>
+                </div>
+                <div class="infra-card">
+                    <div class="infra-img-wrapper">
+                        <!-- Placeholder photo pour les locaux -->
+                        <img src="donnees/locaux-placeholder.jpg" alt="Nos locaux" class="infra-img" onerror="this.style.display='none';">
+                        <div class="placeholder-text">Photo Locaux (à venir)</div>
+                    </div>
+                    <div class="infra-content">
+                        <h3>Nos Locaux à Toulouse</h3>
+                        <p>Nos bureaux et entrepôts sont pensés comme de véritables lieux de vie et d'expérimentation. C'est ici que nos experts préparent méticuleusement chaque intervention, stockent nos outils d'analyse de pointe et accueillent nos partenaires territoriaux.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
